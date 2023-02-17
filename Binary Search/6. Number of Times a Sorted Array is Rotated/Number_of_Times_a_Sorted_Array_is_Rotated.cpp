@@ -20,6 +20,7 @@ class Solution
 {
 private:
     /* Modified Binary Search Algorithm */
+    /* Approach, value of k = index of minimum element. */
     // Time Complexity :- O(log(n)).
     // Space Complexity :- O(1).
     int binarySearch(vector<int> &arr)
@@ -40,47 +41,27 @@ private:
             // calculating mid.
             int mid = low + (high - low) / 2;
 
-            // left half
-            // if arr[low] <= arr[mid], it means, left half is sorted.
-            if (arr[low] <= arr[mid])
-            {
-                // arr[low] to arr[mid] is left half and if this conditions is true, it means left half is sorted.
-                // and when arr[mid + 1] < arr[mid], it means all element from arr[0] to arr[mid] are rotated.
-                if (arr[mid + 1] < arr[mid])
-                {
-                    k = mid + 1; // +1 is for 1-based indexing.
-                    break;
-                }
-                else
-                {
-                    // else if arr[mid + 1] > arr[mid], move to right half.
-                    // Basically, we are looking for a breakpoint in left half, where arr[mid + 1] < arr[mid].
-                    low = mid + 1;
-                }
-            }
-            // right half.
-            // if arr[mid] <= arr[high], it means, right half is sorted.
-            else if (arr[mid] <= arr[high])
-            {
-                // arr[mid] to arr[high] is right half and if this conditions is true, it means right half is sorted.
-                // and if arr[mid] < arr[mid - 1], it means all element from arr[0] to arr[mid - 1] are rotated.
-                if (arr[mid] < arr[mid - 1])
-                {
-                    k = mid;
-                    break;
-                }
-                else
-                {
-                    // else if arr[mid] > arr[mid - 1], move to left half.
-                    high = mid - 1;
-                }
-            }
-        }
+            // element just before mid.
+            int prev = (mid - 1 + n) % n;
 
-        // if k == n, it means array is sorted in increasing order.
-        if(k == n)
-        {
-            return 0;
+            // element just after mid.
+            int next = (mid + 1) % n;
+
+            // minimum element, arr[mid - 1] > arr[mid] < arr[mid + 1]
+            if (arr[mid] <= arr[prev] && arr[mid] <= arr[mid ])
+            {
+                return mid;
+            }
+
+            else if (arr[0] <= arr[mid])
+            {
+                low = mid + 1;
+            }
+            else if(arr[mid] <= arr[high])
+            {
+                // arr[low] >= arr[mid]
+                high = mid - 1;
+            }
         }
 
         return k;
@@ -92,8 +73,6 @@ public:
     {
         return binarySearch(arr);
     }
-
-    /* Another apporach is, You can find the index of minimum element. */
 };
 
 int main()
