@@ -1,0 +1,29 @@
+Question 1 : What is In-Place Sorting ?
+Answer 1 : In-Place Sorting means you have to sort the given array/list without using extra space. Examples are, Bubble Sort, Insertion Sort, Selection Sort, Heapsort.
+
+
+Question 2 : How many types of Sorting Algorithms are there ?
+Answer 2 : There are 2 types of sorting algorithm,
+1. Internal Sorting Algorithm,
+2. External Sorting Algorithm,
+
+
+Question 3 : What is Internal and External Sorting ?
+Answer 3 : 
+1. Internal Sorting Algorithm => When all data is placed in the main memory or internal memory then sorting is called internal sorting. Example: heap sort, bubble sort, selection sort, quick sort, shell sort, insertion sort.
+
+2. External Sorting Algorithm => When all data that needs to be sorted cannot be placed in memory at a time, the sorting is called external sorting. External Sorting is used for the massive amount of data. 
+Merge Sort and its variations are typically used for external sorting. Example: Merge sort, Tag sort, Polyphase sort, Four tape sort, External radix sort, Internal merge sort, etc.
+
+
+Question 4 : What is stable sorting ?
+Answer 4 : In Stable Sorting Algorithm, the order of elements before sorting is same as the order of elements after sorting. Example: merge sort, insertion sort, bubble sort.
+
+
+Question 5 : What is unstable sorting ?
+Answer 5 : In Unstable Sorting Algorithm, the order of elements before sorting is not same as the order of elements after sorting. Example: quick sort, heap sort, shell sort.
+
+
+Question 6 : What does adaptive means in terms of sorting ?
+Answer 6 : Suppose, if you give a sorted array in input, and  If it is an adaptive algorithm, in less time it can easily identify that the array is sorted.
+
