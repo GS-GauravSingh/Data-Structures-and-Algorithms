@@ -1,0 +1,6 @@
+Time Complexity : Time Complexity is equals to the number of nodes in a recursion tree.
+Time Complexity =  number of nodes in a recursion tree.
+-----------------------------------------------------------------------------------------
+Space Complexity : Space Complexity is equals to the height of the recursion tree.
+Space Complexity = height of the recursion tree.
+
