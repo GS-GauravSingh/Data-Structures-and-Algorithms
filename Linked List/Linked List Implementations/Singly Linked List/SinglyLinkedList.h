@@ -1,0 +1,298 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Forward Decleration.
+template <typename T>
+class SinglyLinkedList;
+
+/* --------------------------------- Node for Singly Linked List ------------------------------------- */
+template <typename T>
+class Node
+{
+private:
+    // Because this is a templated class that's why the type of variable is T.
+    T data;
+    Node<T> *next;
+
+public:
+    // Default Constructor.
+    Node()
+    {
+        this->data = 0;
+        this->next = NULL;
+    }
+
+    // Parameterized Constructor.
+    Node(T data)
+    {
+        this->data = data;
+        this->next = NULL;
+    }
+
+    // Destructor.
+    // Deleting entire linked list using destructor.
+    ~Node()
+    {
+        // This if block is like a recursive call
+        // This will make a recursive call till next != NULL
+        // And when next == NULL, then it will return from there and delete the nodes in reverse order.
+        if (next != NULL)
+        {
+            delete next;
+        }
+    }
+
+    // using this, SinglyLinkedList class can access
+    // the private data member of Node class.
+    friend class SinglyLinkedList<T>;
+};
+
+/* --------------------------------- Singly Linked List ------------------------------------------ */
+template <typename T>
+class SinglyLinkedList
+{
+private:
+    // head points to the starting node of the linked list.
+    Node<T> *head;
+
+    // tail points to the last node of the linked list.
+    Node<T> *tail;
+
+    // variable to store total number of element in the linked list.
+    int totalElement;
+
+public:
+    // default Constructor.
+    SinglyLinkedList()
+    {
+        head = tail = NULL;
+
+        // initially the linked list is empty.
+        totalElement = 0;
+    }
+
+    /* Method to Print/Traverse Singly Linked List. */
+    void printSinglyList()
+    {
+        // pointer to traverse singly linked list.
+        Node<T> *ptr = head;
+
+        while (ptr != NULL)
+        {
+            // print the data.
+            cout << ptr->data << " -> ";
+
+            // move the pointer.
+            ptr = ptr->next;
+        }
+        cout << " NULL \n";
+    }
+
+    /* Method to count total number of nodes in a Singly Linked List. */
+    int elementCount()
+    {
+        // pointer to traverse linked list.
+        Node<T> *ptr = head;
+
+        while (ptr != NULL)
+        {
+            totalElement++;    
+        
+            // move the pointer.
+            ptr = ptr->next;
+        }
+        return totalElement;
+    }
+
+    // Insert Node at the beginning of the Singly linked List.
+    void push_front(T data)
+    {
+        // Here we have two cases,
+        // 1. If both head and tail points to NULL, it means the linked list is empty.
+        // So, in this case, Create a new Node and point the head and tail to new node.
+        if (head == NULL)
+        {
+            // creating a new node.
+            Node<T> *newNode = new Node<T>(data);
+
+            // pointing head and tail to new node.
+            head = tail = newNode;
+        }
+
+        // 2. if head and tail both are not NULL, it means there is an existing linked list,
+        //  and you have to insert new node in the beinning.
+        else
+        {
+            // creating a new node.
+            Node<T> *newNode = new Node<T>(data);
+
+            // point newnode to head.
+            newNode->next = head;
+
+            // made this newNode the head node.
+            head = newNode;
+        }
+
+    }
+
+    // Insert the Node at the end of the Singly Linked List.
+    void push_back(T data)
+    {
+        // Here we have two cases,
+        // 1. If both head and tail points to NULL, it means the linked list is empty.
+        // So, in this case, Create a new Node and point the head and tail to new node.
+        if (head == NULL)
+        {
+            // creating a new node.
+            Node<T> *newNode = new Node<T>(data);
+
+            // pointing head and tail to new node.
+            head = tail = newNode;
+        }
+
+        // 2. if head and tail both are not NULL, it means there is an existing linked list,
+        //  and you have to insert new node at the end.
+        else
+        {
+            // creating a new node.
+            Node<T> *newNode = new Node<T>(data);
+
+            // point tail to newNode.
+            tail->next = newNode;
+
+            // made this newNode the tail node.
+            tail = newNode;
+        }
+
+
+    }
+
+    // Insert the Node at the given position.
+    // In this, I'm taking 0-based indexing.
+    void insertAt(T data, int pos)
+    {
+        // Corner case
+        if (pos > elementCount())
+        {
+            cout << "Invalid Index !!\n";
+            return;
+        }
+
+        if (pos == 0)
+        {
+            // Insert at begining.
+            push_front(data);
+        }
+        else
+        {
+            Node<T> *ptr = head;
+            for (int jump = 1; jump < pos; jump++)
+            {
+                ptr = ptr->next;
+            }
+
+            // after the above loop end, Our ptr pointer will points to (pos - 1)th node.
+            Node<T> *newNode = new Node<T>(data);
+            newNode->next = ptr->next;
+            ptr->next = newNode;
+        }
+    }
+
+    // Deletion entire linked list using destructor.
+    ~SinglyLinkedList()
+    {
+        if (head != NULL)
+        {
+            delete head;
+            head = NULL;
+        }
+    }
+
+    // Deleting the front node of the Singly Linked List.
+    void pop_front()
+    {
+        // if head points to NULL, it means linked list is empty.
+        if (head == NULL)
+        {
+            cout << "Singly Linked List is already Empty.\n";
+        }
+        else if (head->next == NULL)
+        {
+            // it means, the linked list has only one element.
+            delete head;
+            head = NULL;
+        }
+        else
+        {
+            // for rest of the cases, simply deleted the front node.
+            Node<T> *nodeToDelete = head;
+            head = head->next;
+            nodeToDelete->next = NULL;
+            delete nodeToDelete;
+            nodeToDelete = NULL;
+        }
+
+
+    }
+
+    // Deleting the last node of the Singly Linked List.
+    void pop_back()
+    {
+        // if head points to NULL, it means linked list is empty.
+        if (head == NULL)
+        {
+            cout << "Singly Linked List is already Empty.\n";
+        }
+        else if (head->next == NULL)
+        {
+            // it means, the linked list has only one element.
+            delete head;
+            head = NULL;
+        }
+        else
+        {
+            // for rest of the cases, simply deleted the last node.
+            Node<T> *ptr = head;
+
+            while (ptr->next->next != NULL)
+            {
+                ptr = ptr->next;
+            }
+
+            // after the above loop end, Our ptr pointer will points to 2nd last node.
+            Node<T> *nodeToDelete = tail;
+            tail = ptr;
+            tail->next = NULL;
+            delete nodeToDelete;
+            nodeToDelete = NULL;
+        }
+    }
+
+    // Deleting node at the given position.
+    // In this, I'm taking 0-based indexing.
+    void deleteAt(int pos)
+    {
+
+        if (pos == 0)
+        {
+            // delete the front node.
+            pop_front();
+        }
+        else
+        {
+            Node<T> *ptr = head;
+            for (int jump = 1; jump < pos; jump++)
+            {
+                ptr = ptr->next;
+            }
+
+            // after the above loop end, Our ptr pointer will points to (pos - 1)th node.
+            Node<T> *NodeToDelete = ptr -> next;
+            ptr -> next = ptr->next->next;
+            
+            NodeToDelete->next = NULL;
+            delete NodeToDelete;
+            NodeToDelete = NULL;
+        }
+    }
+};
