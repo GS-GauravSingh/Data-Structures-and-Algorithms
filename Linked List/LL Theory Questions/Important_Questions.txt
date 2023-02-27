@@ -1,7 +1,7 @@
 Question 1:- Why merge sort is prefered over quick sort on linked list ?
 Answer 1:- 
 
-In case of linked lists the case is different mainly due to difference in memory allocation of arrays and linked lists. Unlike arrays, linked list nodes may not be adjacent in memory.
+Merge sort is preferred for linked list, the nodes may not be present at adjacent memory locations, therefore Merge Sort is used.
 Unlike array, in linked list, we can insert items in the middle in O(1) extra space and O(1) time if we are given reference/pointer to the previous node. Therefore merge operation of merge sort can be implemented without extra space for linked lists.
 
 
