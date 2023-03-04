@@ -1,3 +1,5 @@
 *.exe
 *.class
-# .gitignore
+Test.cpp
+test.cpp
+#  .gitignore
