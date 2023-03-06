@@ -73,6 +73,8 @@ public:
     }
 
     /* Method to print Stack. */
+    // Time Complexity :- O(n), n is the number of elements in stack.
+    // Space Complexity :- O(1)
     void printStack(Stack<int> s)
     {
         while (!s.isEmpty())

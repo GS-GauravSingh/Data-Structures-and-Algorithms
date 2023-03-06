@@ -43,6 +43,8 @@ public:
     }
 
     /* Method to print Stack. */
+    // Time Complexity :- O(n), n is the number of elements in stack.
+    // Space Complexity :- O(1)
     template <typename T>
     void printStack(Stack<T> s)
     {
@@ -66,10 +68,10 @@ int main(void)
 
     // Solution.
     Solution S;
-    cout<<"Before Insertion,\n";
+    cout << "Before Insertion,\n";
     S.printStack(s);
 
-    cout<<"After Insertion,\n";
+    cout << "After Insertion,\n";
     S.insertAtBottom(s, 10);
     S.printStack(s);
 }

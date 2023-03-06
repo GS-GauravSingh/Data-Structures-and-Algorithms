@@ -12,6 +12,7 @@ public:
     int topElementIdx_1; // index for stack 1.
     int topElementIdx_2; // index for stack 2.
 
+    // All methods have constant time complexity.
     // Parameterized Constructor.
     TwoStack(int sizeOfStack)
     {
