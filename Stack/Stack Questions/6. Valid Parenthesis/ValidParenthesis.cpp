@@ -47,7 +47,7 @@ Now stack is empty means expressiong is balanced.
 */
 
 #include <bits/stdc++.h>
-#include "../../Stack Implementation/StackImplementationUsingArray.h"
+#include "../../Stack Implementation/C++ Implementation/StackImplementationUsingArray.h"
 using namespace std;
 
 /* --------------- Solution class ---------------------- */
