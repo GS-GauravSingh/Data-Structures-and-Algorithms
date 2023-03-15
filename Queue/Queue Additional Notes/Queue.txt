@@ -1,0 +1,51 @@
+--------------------------- Questions 1 ----------------------------------------
+Question 1 : Types of Queues.
+
+Answer : There are Six different types of queues that are used in different scenarios. They are:
+1. Normal Queue (Simple Queue).
+2. Input Restricted Queue (Insertion only from one end (rear) and deletion from both ends (rear and front)).
+3. Output Restricted Queue(Insertion from both end (rear and front) and deletion only from one end (front)).
+4. Circular Queue
+5. Double Ended Queue (Deque or DE-Queue) (Insertion and Deletion from both ends (read and front)).
+6. Priority Queue : In Priority queue, elements are stored in a particular order i.e., either in ascending or decending order. In C++ STL, by default elements are stored in descending order, it means the top element of the Priority Queue is always greates and rest of the elements are in decrasing order.
+
+Priority queues are built on the top of the max heap and use an array or vector as an internal structure. In simple terms, STL Priority Queue is the implementation of Heap Data Structure.
+
+--------------------------- Questions 2 ----------------------------------------
+Question 2 : What is Input Restricted Queue ?
+Answer : In input restricted queue, the data can be inserted from only one end (rear), while data can be deleted from both ends (rear and front). 
+
+In Input Restricted Queue,
+1. Insertion of elements into the queue is allowed only from one side i.e., from rear.
+2. and Popping/Deletion of elements from the queue is allowed from both side i.e., from rear and from front.
+Operation in Input Restricted Queue include, push_back(), pop_front(), and pop_back().
+
+--------------------------- Questions 3 ----------------------------------------
+Question 3 : What is Output Restricted Queue ?
+Answer : In Output restricted queue, the data can be deleted from only one end (front), while data can be inserted from both ends (rear and front). 
+
+In Output Restricted Queue,
+1. Insertion of elements into the queue is allowed from both side i.e., from rear and from front.
+2. and Popping/Deletion of elements from the queue is allowed only from one side i.e., from front.
+Operation in Output Restricted Queue include, push_back(), push_front(), and pop_front().
+
+--------------------------- Questions 4 ----------------------------------------
+Question 4 : What is Doubly Ended Queue (AKA Deque) ?
+Answer : In a double ended queue, insertion and removal of elements can be performed from either from the front or rear. Thus, it does not follow the FIFO (First In First Out) rule.
+
+Operation in Double Ended Queue include, push_back(), push_front(), pop_front(), and pop_back().
+
+--------------------------- Questions 5 ----------------------------------------
+Question 5 : What is Input Restricted DE-Queue ?
+Answer : In DE-Queue we can perform insertion and deletion from both ends i.e., from rear and front. So, in Deque there are 4 operation allowed i.e., push_back(), push_front(), pop_back(), and pop_front().
+
+But in case of Input Restricted DE-Queue, Insertion from front is not allowed.
+Operation allowed in Input Restricted DE-Queue inlude, push_back(), pop_back(), and pop_front().
+
+--------------------------- Questions 6 ----------------------------------------
+Question 5 : What is Output Restricted DE-Queue ?
+Answer : In DE-Queue we can perform insertion and deletion from both ends i.e., from rear and front. So, in Deque there are 4 operation allowed i.e., push_back(), push_front(), pop_back(), and pop_front().
+
+But in case of Output Restricted DE-Queue, Deletion from rear is not allowed.
+Operation allowed in Output Restricted DE-Queue inlude, push_back(), push_front(), and pop_front().
+
