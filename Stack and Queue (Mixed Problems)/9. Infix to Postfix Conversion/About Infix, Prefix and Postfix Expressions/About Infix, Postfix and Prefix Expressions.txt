@@ -1,0 +1,69 @@
+/* --------------------------- Infix Expressions ---------------------------------- */
+
+Infix Expression is the expression that is in the form of (a operator b), where a and b are operands and +,-,/,*,^, etc, are operators. Infixi expressions are those expressions that we encounter in our daily life while solving mathematical problems.
+
+Infix Expression Syntax = Operand Operator Operand
+
+Examples of Infix Expressions are, 
+1. a+b
+2. a-b
+3. a+b-c*d ==> (a+b-(c*d))
+4. a/d+b*c-e ==> (((a/d) + (b*c)) - e)
+and a lot more..
+
+And to solve this type of Expression we use a rule called BODMAS (Bracket of Division, Multiplication, Addition, and Substraction).
+
+
+/* --------------------------- Prefix Expressions ---------------------------------- */
+Pre means before, Prefix notation/expressions puts operator before all of the operands.  It means Prefix expression is the expression that is in the form of (Operator ab), where a and b are operand and +,-,/,*,^, etc, are operators.
+Prefix Expression Syntax = Operator Operand Operand
+
+Examples of Postfix Expression are, 
+1. +ab
+2. -ab
+
+/* --------------------------- Postfix Expressions ---------------------------------- */
+Post means after, Postfix notation/expressions puts operator after all of the operands. It means Postfix expression is the expression that is in the form of (ab Operator), where a and b are operand and +,-,/,*,^, etc, are operators.
+Postfix Expression Syntax =  Operand Operand Operator
+
+Examples of Postfix Expression are, 
+1. ab+
+2. ab-
+
+/* --------------------------- Infix, Postfix and Prefix Examples ---------------------------------- */
+
+S.No.       Infix Expression        Postfix Expression        Prefix Expression
+             (a operator b)           (ab operator)            (operator ab)
+---------------------------------------------------------------------------------------------
+ 1.              (a+b)                      ab+                       +ab
+ 2.              (a+(b*d))                  abd*+                     +a*bd
+ 3.              (a+(b*c))                  abc*+                     +a*bc
+ 4.              ((x*y)-(z/p))              xy*zp/-                   -*xy/zp
+
+
+/* ---- Tips to convert the Infix Expression to prefix and postfix expression ---- */
+Suppose we have an infix expression like this => a+b*c/d and now to convert this expression into a prefix expression follow the below steps,
+
+Step 1 :- According to the precedence of the operator, apply brackets (parenthesis) on the given expression because as we know that the expression written inside parenthesis will evaluates first.
+Step 2 :- Start solving the expression from inner most bracket to outer most bracket.
+
+After applying brackets (parenthesis), our expression looks like this, (a+((b*c)/d)), because * and / have higher precedence than  + and -. That's why b*c evaluates first and the result of b*c will then be divided by d and then a will be added to the result of ((b*c)/d).
+
+
+Question :- Convert Infix Expression (a+b*c/d) to PostFix Expression. 
+Step 1 :- applying brackets => (a+((b*c)/d)).
+Step 2 :- Start solving the expression from inner most bracket to outer most bracket.
+1. (b*c) = bc* => (a+(bc*/d))
+2. (bc*/d) = bc*d/ => (a+bc*d/)
+3. (a+bc*d/) = abc*d/+ 
+
+Infix Expression (a+b*c/d) => Postfix Expression (abc*d/+).
+
+Question :- Convert Infix Expression (a+b*c/d) to Prefix Expression. 
+Step 1 :- applying brackets => (a+((b*c)/d)).
+Step 2 :- Start solving the expression from inner most bracket to outer most bracket.
+1. (b*c) = *bc => (a+(*bc/d))
+2. (*bc/d) = /*bcd => (a+/*bcd)
+3. (a+/*bcd) = +a/*bcd
+
+Infix Expression (a+b*c/d) => Prefix Expression (+a/*bcd).
