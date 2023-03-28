@@ -46,7 +46,7 @@ public:
         else{
             // if current -> left exist's.
             -----------------------------------------------------------------------------------
-            ## What is Onorder Predecessor ? ##
+            ## What is Inorder Predecessor ? ##
             Lets take an example to understand this,
             Example Tree:-
                                             1
@@ -65,6 +65,10 @@ public:
             Predecessor of 5 is 17.
 
             ## How to find inorder predecessor ?
+
+            A simple approach is to store the inorder traversal of Binary Tree and find the inorder predecessor of any given element.
+
+            If you want to find the inorder predecessor without storing the inorder traversal, see the example below,
             Lets say you have to find the predessor of 1.
 
             Lets take currentNode = 1;
