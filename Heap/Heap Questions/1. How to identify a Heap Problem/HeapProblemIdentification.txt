@@ -1,0 +1,8 @@
+Question: How to identify what problem can be solved using Heap or not ?
+Answer: There are some keywords and if these keywords are there in the questions then, that problem can be solved using heap.
+
+Keywords are, 
+1. K smallest, if K smallest is there, then create max heap.
+2. K largest, if K largest is there, then create min heap.
+
+Note: The brute force solution of maximum heap questions is sorting.
