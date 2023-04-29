@@ -6,8 +6,10 @@ class BreadthFirstSearchTraversal
 {
 private:
     /* Breadth First Search Algorithm. */
-    // Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
-    // Space Complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+    // Time Complexity: O(V) + O(2E), where V is the number of vertices and E is the number of edges in the graph.
+    // The while loop will run "V" times and the inner for loop will run total "2E" times.
+    // In case of directed graph the Time Complexity is O(V) + O(E).
+    // Space Complexity: O(V), where V is the number of vertices and E is the number of edges in the graph.
     void BreadthFirstSearch(int startVertex, vector<int> &ans, unordered_map<int, list<int>> &adjList, unordered_map<int, bool> &visited)
     {
         // The queue is used to keep track of the vertices that have been visited but not processed yet.
@@ -48,8 +50,6 @@ private:
     }
 
 public:
-
-
     /* Given graph is undirected and may contain disconnected components. */
     vector<int> BFS(int vertex, vector<pair<int, int>> edges)
     {
@@ -109,6 +109,6 @@ int main(void)
     // Solution.
     BreadthFirstSearchTraversal bfs;
     vector<int> ans = bfs.BFS(V, edges);
-    cout<<"BFS Traversal of given graph is: ";
+    cout << "BFS Traversal of given graph is: ";
     bfs.printVec(ans);
 }

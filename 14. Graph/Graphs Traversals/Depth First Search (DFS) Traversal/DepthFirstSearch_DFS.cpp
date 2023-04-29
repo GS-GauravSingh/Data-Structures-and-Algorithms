@@ -6,8 +6,9 @@ class DepthFirstSearchTraversal
 {
 private:
     /* Depth First Search Algorithm. */
-    // Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
-    // Space Complexity: O(V), recursive stack space.
+    // Time Complexity: O(V) + O(2E), where V is the number of vertices and E is the number of edges in the graph.
+    // In case of directed graph the Time Complexity is O(V) + O(E).
+    // Space Complexity: O(V), excluding the space used by adjacency list because in most of the problems adjacency list is given.
     void DepthFirstSearch(int startVertex, vector<int> &ans, unordered_map<int, list<int>> &adjList, unordered_map<int, bool> &visited)
     {
         // matk the current node as visited.

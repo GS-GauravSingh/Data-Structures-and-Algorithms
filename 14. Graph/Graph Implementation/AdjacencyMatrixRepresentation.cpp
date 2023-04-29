@@ -6,6 +6,8 @@ const int MAX_VERTICES = 100;
 
 /* ---------------------------------- Graph Class ------------------------------- */
 
+// Time Complexity: O(V^2), V is the total number of vertices or node in a graph. 
+// Space Complexity of storing graph in a 2D matrix: O(V^2), V is the total number of vertices or node in a graph.
 class Graph
 {
 private:

@@ -10,18 +10,18 @@ private:
 public:
     /* Methods or Behavior of Graph Class. */
 
-    /* You are given an undirected grapg of "V" number of nodes(vertices) and "E" number of edges. YOur task is to create the graph and print the adjacency list of the grapg. */
+    /* You are given an undirected grapg of "V" number of nodes(vertices) and "E" number of edges. Your task is to create the graph and print the adjacency list of the graph. */
 
     // Time Complexity: O(V+E).
     // Space Complexity: O(V+E).
-    vector<vector<int>> printAdjacency(int V, int E, vector<vector<int>> &edges)
+    void printAdjacency(int V, int E, vector<vector<int>> &edges)
     {
         // adjacecny list.
         unordered_map<int, list<int>> adjList;
 
         for (int i = 0; i < E; i++)
         {
-            // Extracting nodes from edge vector.
+            // Extracting nodes from edges vector.
             int u = edges[i][0];
             int v = edges[i][1];
 
@@ -57,5 +57,5 @@ int main(void)
     };
 
     Solution S;
-    vector<vector<int>> ans = S.printAdjacency(V, E, edges);
+    S.printAdjacency(V, E, edges);
 }

@@ -6,6 +6,10 @@ const int MAX_VERTICES = 100;
 
 /* ---------------------------------- Graph Class ------------------------------- */
 
+// Time Complexity: O(E), E is the total number of edges in a graph. [Excluding the time of printing Adjacency List].
+// Space Complexity of storing graph in a Adjacency List: O(2*E) in case of Undirected Graph, This is because each edge in an undirected graph connects two vertices, and in case of directed graph the Space Complexity is O(E).
+
+
 class Graph
 {
 private:
