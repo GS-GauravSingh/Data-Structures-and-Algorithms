@@ -93,6 +93,10 @@ private:
     }
 
 public:
+    /*
+    Time Complexity: O(V+2E), where V = no. of vertices, E = no. of edges. It is because the algorithm is just a simple DFS traversal.
+    Space Complexity: O(3V), where V = no. of vertices. O(3V) is for the three arrays i.e. discovery time, lowest discovery time, and visited, each of size V.
+    */
     vector<int> articulationPoints(int V, int E, vector<vector<int>> &edges)
     {
         // create an adjacency list for undirected graph.
