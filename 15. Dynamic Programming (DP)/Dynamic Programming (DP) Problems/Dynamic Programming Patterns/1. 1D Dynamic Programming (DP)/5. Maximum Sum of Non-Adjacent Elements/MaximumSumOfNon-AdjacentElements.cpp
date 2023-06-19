@@ -139,7 +139,7 @@ private:
             prevOne = curr;
         }
 
-        // return the maximum sum.
+        // return the maximum sum .
         return prevOne;
     }
 
