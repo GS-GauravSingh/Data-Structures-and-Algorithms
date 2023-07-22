@@ -169,7 +169,7 @@ public:
 /*-------------------------- Solution Class Ends Here. ------------------------- */
 int main()
 {
-    vector<int> arr = {1, 2, 3};
+    vector<int> arr = {2,3,1};
 
     Solution s;
     s.nextPermutation_Approach2(arr);
