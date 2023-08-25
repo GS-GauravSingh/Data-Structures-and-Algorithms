@@ -2,4 +2,5 @@
 *.class
 Test.cpp
 test.cpp
+*.out
 #  .gitignore
